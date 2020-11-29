@@ -1,0 +1,505 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head lang="en">
+<title>Registration</title>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+ /* Remove the navbar's default margin-bottom and rounde d borders */
+ .navbar {
+ margin-bottom: 0;
+ border-radius: 0;
+ }
+
+
+ /* Add a gray background color and some padding to the footer */
+ footer {
+ background-color: #1a1a1a;
+ padding: 15px;
+ }
+
+ .carousel-inner img {
+ width: 100%; /* Set width to 100% */
+ margin: auto;
+ min-height:180px;
+ }
+ /* Hide the carousel text when the screen is less than 600 pixels wide */
+ @media (max-width: 600px) {
+ .carousel-caption {
+ display: none;
+ }
+ }
+ body
+{
+ font
+-family: 'Open Sans', sans
+-serif
+;
+}
+h1, h2, h3, h4, h5, h6
+{
+ font
+-weight: 300
+;
+}p
+{
+ color: #999
+;
+}
+strong
+{
+ color: #333
+;
+}
+#wrapper
+{
+ width: 100%
+;
+ max
+-width: 600px
+;
+ margin: 0 auto
+;
+ text
+-align: center
+;
+ padding: 30px 0
+;
+}
+.page
+-head
+-image
+{
+ }
+.page
+-head
+-image img
+{
+ border
+-radius: 50%
+;
+}
+#form
+-trabalhe
+{
+ margin
+-top: 30px
+;
+ text
+-align: left
+;
+}
+label
+{
+ font
+-weight: normal
+;
+ margin
+-top: 15px
+;
+}
+input
+{
+ border: 2px solid #CCC !important
+;
+ height: 40px
+;
+ border
+-radius: 3px
+;
+ max
+-width: 100%
+;
+}
+.input
+-group
+-addon
+{
+ border: 2px solid #CCC !important
+;
+  border
+-right: 0px !important
+;
+}
+.btn {
+ border: 0;
+ border-radius: 3px;
+ margin-top: 20px;
+}
+.form-group {
+ margin-bottom: 0;
+ text-align: left;
+}
+* {margin: 0;padding: 0;}
+body { font-family: arial; font-size: 16px;}
+.clearfix {clear: both;}
+.center {text-align: center;}
+.left {text-align: left;}
+.right {text-align: right;}
+.clr1 {background: #FFFFFF; color: #333743;}
+.clr2 {background: #F1F3F5; color: #8F94A3;}
+.clr3 {background: #3E4352; color: #BDC3CF;}
+.clr4 {background: #636A7D; color: #E3E7F2;}
+.clr5 {background: ; color: #F1F3F5;}
+.clr6 {background: ; color: #39B5A1;}
+.clr7 {background: ; color: #D45245;}
+a {color: #BDC3CF; text-decoration: none;}
+a:hover {color: #ffffff; text-decoration: underline;}
+a:visited{}
+/*##### Footer Structure #####*/
+.bo-wrap {clear:both; width: auto;}
+.bo-footer {
+ clear:both;
+ width: auto;
+ padding: 5px;
+ width: 960px;
+margin: 0 auto;
+}
+.bo-footer-social {text-align: center; line-height: 1px;}
+.bo-footer-smap {
+width: 300px;
+float: left;
+padding: 5px 10px;
+ text-align: left;
+ font-size: 18px;
+}
+.bo-footer-uonline {
+width: 300px; /* Account for margins + border values */
+float: left;
+padding: 5px 10px;
+ text-align: center;
+ }
+ .bo-footer-power {
+width: 300px;
+padding: 5px 10px;
+float: left;
+ text-align: right;
+ font-size: 14px;
+ color: #ffffff;
+ vertical-align: middle;
+}
+.bo-footer-copyright {text-align: center; color: #BDC3CF}
+/*##### Footer Responsive #####*/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+.bo-footer {
+width: 95%;
+padding: 1% 2%;
+}
+.bo-footer-smap {
+width: 46%;
+padding: 1% 2%;
+}
+.bo-footer-uonline {
+width: 46%;
+padding: 1% 2%;
+float: right;
+ text-align: right;
+}
+.bo-footer-power {
+clear: both;
+padding: 1% 2%;
+width: auto;
+float: none;
+ text-align: center;
+}
+}
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+.bo-footer-smap {
+width: auto;
+float: none;
+ text-align: center;
+}
+.bo-footer-uonline {
+width: auto;
+float: none;
+ text-align: center;
+}
+.bo-footer-power {
+width: auto;
+float: none;
+ text-align: center;
+}
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+}
+
+ </style>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+ <div class="navbar-header">
+ <button type="button" class="navbar-toggle" data-toggle="collapse" datatarget="#myNavbar">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a class="navbar-brand" >FindMissingPeople.com</a>
+ </div>
+ <div class="collapse navbar-collapse" id="myNavbar">
+ <ul class="nav navbar-nav">
+ <li class="active"><a href="Home.jsp">Home</a></li>
+ <li><a href="About.jsp">About FMP</a></li>
+ <li><a href="Laws.jsp">Childrens Related Laws</a></li>
+ <li><a href="Feedback.jsp">Feedback</a></li>
+ <li><a href="Contact.jsp">Contact Us</a></li>
+ </ul>
+ <ul class="nav navbar-nav navbar-right">
+ <li><a href="Register.jsp"><span class="glyphicon glyphicon-user"></span> Sign
+Up</a></li>
+ <li><a href="Login.jsp"><span class="glyphicon glyphicon-log-in"></span>
+Login</a></li>
+ </ul>
+ </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+ <ol class="carousel-indicators">
+ <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+ <li data-target="#myCarousel" data-slide-to="1"></li>
+ <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ol>
+ <!-- Wrapper for slides -->
+ <div class="carousel-inner" role="listbox">
+ <div class="item active">
+ <img src="images/ss1.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">Ever you lost someone.</h4>
+ <h4 style="color:black;">We help to search people, To get help for searching
+& to return them at home please register.</h4>
+ </div>
+ </div>
+ <div class="item">
+ <img src="images/ss2.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">Please provide maximum and accurate information
+about the child.</h4>
+ </div>
+ </div>
+
+ <div class="item">
+ <img src="images/ss3.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">You may contact police at 100 or CHILDLINE at
+1098.</h4>
+ </div>
+ </div>
+
+
+ </div>
+
+ <!-- Left and right controls -->
+ <a class="left carousel-control" href="#myCarousel" role="button" dataslide="prev">
+ <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ <span class="sr-only">Previous</span>
+ </a>
+ <a class="right carousel-control" href="#myCarousel" role="button" dataslide="next">
+ <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ <span class="sr-only">Next</span>
+ </a>
+</div>
+
+<div class="container text-center">
+ <h1><b>Registration</b></h1><br>
+
+<div id="wrapper" class="container">
+ <form id="form-work" class="" action="reg" method="post" enctype="multipart/formdata">
+ <fieldset>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Name <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="name" placeholder="Enter
+your Name" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Username <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="user_name"
+placeholder="Enter your User Name" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Password <span
+style="color:red;">*</span></label>
+ <input type="password" class="form-control" name="user_password"
+placeholder="Enter your password" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Confirm Password <span
+style="color:red;">*</span></label>
+ <input type="password" class="form-control" name="user_password2"
+placeholder="Confirm your password" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Mobile <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="user_mobile"
+placeholder="Enter your mobile no" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Email ID <span
+style="color:red;">*</span></label>
+ <input type="email" class="form-control" name="user_email"
+placeholder="Enter your email id" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Address <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="user_address"
+placeholder="Enter your address" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Pincode <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="user_pincode"
+ placeholder="Enter the pincode" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >State <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="user_state" required>
+ <option>-- Select --</option>
+ <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+ <option value="Himachal Pradesh">Himachal Pradesh</option>
+ <option value="Punjab">Punjab</option>
+ <option value="Chandigarh">Chandigarh</option>
+ <option value="Uttrakhand">Uttrakhand</option>
+ <option value="Haryana">Haryana</option>
+ <option value="Delhi">Delhi</option>
+ <option value="Rajasthan">Rajasthan</option>
+ <option value="Uttar Pradesh">Uttar Pradesh</option>
+ <option value="Bihar">Bihar</option>
+ <option value="Sikkim">Sikkim</option>
+ <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+ <option value="Nagaland">Nagaland</option>
+ <option value="Manipur">Manipur</option>
+ <option value="Mizoram">Mizoram</option>
+ <option value="Tripura">Tripura</option>
+ <option value="Meghalaya">Meghalaya</option>
+ <option value="Assam">Assam</option>
+ <option value="West Bengal">West Bengal</option>
+ <option value="Jharkhand">Jharkhand</option>
+ <option value="Odisha">Odisha</option>
+ <option value="Chhatisgarh">Chhatisgarh</option>
+ <option value="Madhya Pradesh">Madhya Pradesh</option>
+ <option value="Gujarat">Gujarat</option>
+ <option value="Daman &amp; Diu">Daman &amp; Diu</option>
+ <option value="Dadra &amp; Nagar Haveli">Dadra &amp; Nagar
+Haveli</option>
+ <option value="Maharashtra">Maharashtra</option>
+ <option value="Andhra Pradesh">Andhra Pradesh</option>
+ <option value="Karnataka">Karnataka</option>
+ <option value="Goa">Goa</option>
+ <option value="Lakshadweep">Lakshadweep</option>
+ <option value="Kerala">Kerala</option>
+ <option value="Tamil Nadu">Tamil Nadu</option>
+ <option value="Puducherry">Puducherry</option>
+ <option value="Andaman &amp; Nicobar Islands">Andaman &amp;
+Nicobar Islands</option>
+ <option value="Telangana">Telangana</option>
+</select>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Identity Proof <span
+style="color:red;">*</span></label>
+<input type="file" class="form-control" name="user_photo"
+required="required">
+ </div>
+ </div>
+ <br>
+
+ <div class="form-group">
+ <center>
+ <input type="checkbox" class="form-control" required>I accept the <a
+href="Terms&conditions.jsp" style="color:Blue;">TERMS & CONDITIONS.</a>
+ </center>
+
+ <div class="form-group">
+ <div class="col-md-12">
+ <button type="Submit" class="btn btn-primary btn-lg btn-block
+info">Register</button>
+ </div>
+ </div>
+ </fieldset>
+ </form>
+</div>
+</div>
+<br>
+<!-- Footer -->
+<div class="bo-wrap clr4">
+ <div class="bo-footer">
+ <div class="bo-footer-social"></div>
+ </div>
+</div>
+<div class="bo-wrap clr3">
+ <div class="bo-footer">
+ <div class="bo-footer-smap">
+ <a href="Home.jsp">Home</a> | <a href="Feedback.jsp">Feedback</a> | <a
+href="Contact.jsp">Contact Us</a>
+ </div>
+
+ <div class="bo-footer-uonline">
+ <script id="_wautoy">var _wau = _wau || []; _wau.push(["small",
+"p6egqc1t5bze", "toy"]);
+(function() {var s=document.createElement("script"); s.async=true;
+s.src="http://widgets.amung.us/small.js";
+document.getElementsByTagName("head")[0].appendChild(s);
+})();</script>
+ </div>
+
+ <div class="bo-footer-power">
+ Designed & Developed by Ankita Tyagi.
+
+ </div>
+ <div class="clearfix"></div>
+ </div>
+</div>
+<div class="bo-wrap clr4">
+ <div class="bo-footer">
+ <div class="bo-footer-copyright">&copy;2020 Findmissingpeoples.com All rights
+ reserved.</div>
+ </div>
+</div>
+</body>
+</html>
+ 
+ 

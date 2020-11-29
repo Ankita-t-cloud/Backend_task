@@ -1,0 +1,827 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Missing My Child</title>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style>
+ /* Remove the navbar's default margin-bottom and rounde d borders */
+ .navbar {
+ margin-bottom: 0;
+ border-radius: 0;
+ }
+
+ /* Add a gray background color and some padding to the footer */
+ footer {
+ background-color: #1a1a1a;
+ padding: 15px;
+ }
+
+ .carousel-inner img {
+ width: 100%; /* Set width to 100% */
+ margin: auto;
+ min-height:180px;
+ }
+ /* Hide the carousel text when the screen is less than 600 pixels wide */
+ @media (max-width: 600px) {
+ .carousel-caption {
+ display: none;
+ }
+ }
+
+ body {
+ font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-weight: 300;
+}
+p {
+color: #999
+;
+}
+strong
+{
+ color: #333
+;
+}
+#wrapper
+{
+ width: 100%
+;
+ max
+-width: 600px
+;
+ margin: 0 auto
+;
+ text
+-align: center
+;
+ padding: 30px 0
+;
+}
+.page
+-head
+-image
+{
+ }
+.page
+-head
+-image img
+{
+ border
+-radius: 50%
+;
+}
+#form
+-trabalhe
+{
+ margin
+-top: 30px
+;
+ text
+-align: left
+;
+}
+label
+{
+ font
+-weight: normal
+;
+ margin
+-top: 15px
+;
+}
+input
+{
+ border: 2px solid #CCC !important
+;
+ height: 40px
+;
+ border
+-radius: 3px
+;
+ max
+-width: 100%
+;
+}
+.input
+-group
+-addon
+{
+ border: 2px solid #CCC !important
+;
+ border
+-right: 0px !important
+;
+}
+.btn
+{
+ border:
+0
+;
+ border
+-radius: 3px
+;
+ margin
+-top: 20px
+;
+}
+.form
+-group
+{
+ margin
+-bottom:
+0
+;
+ text
+-align: left
+;
+}
+* {margin: 0;padding: 0;}
+body { font-family: arial; font-size: 16px;}
+.clearfix {clear: both;}
+.center {text-align: center;}
+.left {text-align: left;}
+.right {text-align: right;}
+.clr1 {background: #FFFFFF; color: #333743;}
+.clr2 {background: #F1F3F5; color: #8F94A3;}
+.clr3 {background: #3E4352; color: #BDC3CF;}
+.clr4 {background: #636A7D; color: #E3E7F2;}
+.clr5 {background: ; color: #F1F3F5;}
+.clr6 {background: ; color: #39B5A1;}
+.clr7 {background: ; color: #D45245;}
+a {color: #BDC3CF; text-decoration: none;}
+a:hover {color: #ffffff; text-decoration: underline;}
+a:visited{}
+/*##### Footer Structure #####*/
+.bo-wrap {clear:both; width: auto;}
+.bo-footer {
+ clear:both;
+ width: auto;
+ padding: 5px;
+ width: 960px;
+margin: 0 auto;
+}
+.bo-footer-social {text-align: center; line-height: 1px;}
+.bo-footer-smap {
+width: 300px;
+float: left;
+padding: 5px 10px;
+ text-align: left;
+ font-size: 18px;
+}
+.bo-footer-uonline {
+width: 300px; /* Account for margins + border values */
+float: left;
+padding: 5px 10px;
+ text-align: center;
+}
+.bo-footer-power {
+width: 300px;
+padding: 5px 10px;
+float: left;
+ text-align: right;
+ font-size: 14px;
+ color: #ffffff;
+ vertical-align: middle;
+}
+.bo-footer-copyright {text-align: center; color: #BDC3CF}
+@media screen and (max
+-width: 980px) {
+.bo
+-footer
+{
+width: 95%
+;
+padding: 1% 2%
+;
+}
+.bo
+-footer
+-smap
+{
+width: 46%
+;
+padding: 1% 2%
+;
+}
+.bo
+-footer
+-uonline
+{
+width: 46%
+;
+padding: 1% 2%
+;
+float: right
+;
+ text
+-align: right
+;
+}
+.bo
+-footer
+-power
+{
+clear: both
+;
+padding: 1% 2%
+;
+width: auto
+;
+float: none
+;
+ text
+-align: center
+;
+}
+}
+/* for 700px or less */
+@media screen and (max
+-width: 600px) {
+.bo
+-footer
+-smap
+{
+width: auto;
+float: none
+;
+ text
+-align: center
+;
+}
+.bo
+-footer
+-uonline
+{
+width: auto
+;
+float: none
+;
+ text
+-align: center
+;
+}
+.bo
+-footer
+-power
+{
+width: auto
+;
+float: none
+;
+ text
+-align: center
+;
+}
+}
+/* for 480px or less */
+@media screen and (max
+-width: 480px) {
+ }
+ </style
+>
+</head
+>
+<body>
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+ <div class="navbar-header">
+ <button type="button" class="navbar-toggle" data-toggle="collapse" datatarget="#myNavbar">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a class="navbar-brand" >FindMissingPeople.com</a>
+ </div>
+ <div class="collapse navbar-collapse" id="myNavbar">
+ <ul class="nav navbar-nav">
+ <li class="active"><a href="Welcome.jsp">Home</a></li>
+ <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+href="#">About FMP <span class="caret"></span></a>
+ <ul class="dropdown-menu">
+ <li><a href="#">Page 1-1</a></li>
+ <li><a href="#">Page 1-2</a></li>
+ <li><a href="#">Page 1-3</a></li>
+ </ul>
+ </li>
+ -->
+ <li><a href="About2.jsp">About FMP</a></li>
+ <li><a href="Laws2.jsp">Childrens Related Laws</a></li>
+ <li><a href="Feedback2.jsp">Feedback</a></li>
+ <li><a href="Contact2.jsp">Contact Us</a></li>
+ </ul>
+ <ul class="nav navbar-nav navbar-right">
+ <li><a href="#"><span class="glyphicon glyphicon-phone"></span> My
+Account</a></li>
+ <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+href="#"><span class="glyphicon glyphicon-user"></span> Profile <span
+class="caret"></span></a>
+ <ul class="dropdown-menu">
+ <li><a href="Viewprofile.jsp">View Profile</a></li>
+ <li><a href="Updateprofile.jsp">Edit Profile</a></li>
+ <li><a href="Logout.jsp">Logout</a></li>
+ </ul>
+ </li>
+ </ul>
+ </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+ <ol class="carousel-indicators">
+ <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+ <li data-target="#myCarousel" data-slide-to="1"></li>
+ <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ol>
+ <!-- Wrapper for slides -->
+ <div class="carousel-inner" role="listbox">
+ <div class="item active">
+ <img src="images/ss1.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">Ever you lost someone.</h4>
+ <h4 style="color:black;">We help to search people, To get help for searching
+& to return them at home please register.</h4>
+ </div>
+ </div>
+ <div class="item">
+ <img src="images/ss2.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">Please provide maximum and accurate information
+about the child.</h4>
+ </div>
+ </div>
+
+ <div class="item">
+ <img src="images/ss3.jpg" alt="Image">
+ <div class="carousel-caption">
+ <h4 style="color:black;">You may contact police at 100 or CHILDLINE at
+1098.</h4>
+ </div>
+ </div>
+
+
+ </div>
+
+
+ <!-- Left and right controls -->
+ <a class="left carousel-control" href="#myCarousel" role="button" dataslide="prev">
+ <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ <span class="sr-only">Previous</span>
+ </a>
+ <a class="right carousel-control" href="#myCarousel" role="button" dataslide="next">
+ <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ <span class="sr-only">Next</span>
+ </a>
+</div>
+
+<div class="container text-center">
+ <h1><b>My Child is Missing</b></h1><br>
+<div id="wrapper" class="container">
+ <form id="form-work" action="missingchildservlet" method="post"
+enctype="multipart/form-data">
+ <fieldset>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Name <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="name" placeholder="Enter
+your Name" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Father Name <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="fname" placeholder="Enter
+Missing Child Father Name" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Username <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="user_name"
+placeholder="Enter your Username" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Date of Birth <span
+style="color:red;">*</span></label></div>
+ <div class="col-md-2">
+ <select class="form-control" name="dobmonth" required>
+ <option>MM</option>
+ <option value="January">January</option>
+<option value="Febuary">Febuary</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="October">October</option>
+<option value="November">November</option>
+<option value="December">December</option>
+</select></div>
+<div class="col-md-2">
+ <select class="form-control" name="dobday" required>
+ <option>DD</option>
+ <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select></div>
+<div class="col-md-2">
+ <select class="form-control" name="dobyear" required>
+ <option>YYYY</option>
+ <option value="2017">2017</option>
+ <option value="2016">2016</option>
+ <option value="2015">2015</option>
+ <option value="2014">2014</option>
+ <option value="2013">2013</option>
+ <option value="2012">2012</option>
+ <option value="2011">2011</option>
+ <option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+<option value="1984">1984</option>
+<option value="1983">1983</option>
+<option value="1982">1982</option>
+<option value="1981">1981</option>
+<option value="1980">1980</option>
+<option value="1979">1979</option>
+<option value="1978">1978</option>
+<option value="1977">1977</option>
+<option value="1976">1976</option>
+<option value="1975">1975</option>
+<option value="1974">1974</option>
+<option value="1973">1973</option>
+<option value="1972">1972</option>
+<option value="1971">1971</option>
+<option value="1970">1970</option>
+<option value="1969">1969</option>
+<option value="1968">1968</option>
+<option value="1967">1967</option>
+<option value="1966">1966</option>
+<option value="1965">1965</option>
+<option value="1964">1964</option>
+<option value="1963">1963</option>
+<option value="1962">1962</option>
+<option value="1961">1961</option>
+<option value="1960">1960</option>
+<option value="1959">1959</option>
+<option value="1958">1958</option>
+<option value="1957">1957</option>
+<option value="1956">1956</option>
+<option value="1955">1955</option>
+<option value="1954">1954</option>
+<option value="1953">1953</option>
+<option value="1952">1952</option>
+<option value="1951">1951</option>
+<option value="1950">1950</option>
+<option value="1949">1949</option>
+<option value="1948">1948</option>
+<option value="1947">1947</option>
+</select>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Date of Missing <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="missingdate"
+placeholder="DD/MM/YYYY" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Gender <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="gender" placeholder="Male
+/ Female" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Height <span
+style="color:red;">*</span></label>
+<input type="text" class="form-control" name="height" placeholder="In
+Feets" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Complextion <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="complextion" required>
+ <option>-- Select --</option>
+ <option value="Fair">Fair</option>
+ <option value="Wheatish">Wheatish</option>
+ <option value="Dark">Dark</option>
+ <option value="Very Fair">Very Fair</option>
+</select>
+</div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Top Wear <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="topwear" required>
+ <option>-- Select --</option>
+ <option value="T Shirt">T Shirt</option>
+ <option value="Shirt">Shirt</option>
+ <option value="Top">Top</option>
+ <option value="School Uniform">School Uniform</option>
+ <option value="Vest">Vest</option>
+ <option value="Kurta">Kurta</option>
+ <option value="Kurti">Kurti</option>
+ <option value="Saree">Saree</option>
+ <option value="Half Saree">Half Saree</option>
+ <option value="Nothing">Nothing</option>
+</select>
+</div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Bottom Wear <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="bottomwear" required>
+ <option>-- Select --</option>
+ <option value="Capry">Capry</option>
+ <option value="Cargoes">Cargoes</option>
+ <option value="Half Pants">Half Pants</option>
+ <option value="Jeans">Jeans</option>
+ <option value="Jeggings">Jeggings</option>
+ <option value="Lower">Lower</option>
+ <option value="Skirt">Skirt</option>
+ <option value="Trousers">Trousers</option>
+ <option value="School Uniforms">School Uniforms</option>
+ <option value="Nothing">Nothing</option>
+</select>
+</div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Top Wear Color <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="topcolor" required>
+ <option>-- Select --</option>
+ <option value="Black">Black</option>
+ <option value="Blue">Blue</option>
+ <option value="Brown">Brown</option>
+ <option value="Grey">Grey</option>
+ <option value="Green">Green</option>
+ <option value="Orange">Orange</option>
+ <option value="Pink">Pink</option>
+ <option value="Purple">Purple</option>
+ <option value="Red">Red</option>
+ <option value="Voilet">Voilet</option>
+ <option value="White">White</option>
+ <option value="Yellow">Yellow</option>
+</select>
+</div>
+ </div>
+
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Bottom Wear Color <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="bottomcolor" required>
+ <option>-- Select --</option>
+ <option value="Black">Black</option>
+ <option value="Blue">Blue</option>
+ <option value="Brown">Brown</option>
+ <option value="Grey">Grey</option>
+ <option value="Green">Green</option>
+ <option value="Orange">Orange</option>
+ <option value="Pink">Pink</option>
+ <option value="Purple">Purple</option>
+ <option value="Red">Red</option>
+ <option value="Voilet">Voilet</option>
+ <option value="White">White</option>
+ <option value="Yellow">Yellow</option>
+</select>
+</div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Father's Contact <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="fathermobile"
+placeholder="Enter Father's Contact Number." required>
+ </div>
+ </div>
+
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Address <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="address"
+placeholder="Enter your Address" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Pincode <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="pincode"
+placeholder="Enter your Pincode" required>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >State <span
+style="color:red;">*</span></label>
+ <select class="form-control" name="state" required>
+ <option>-- Select --</option>
+ <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+ <option value="Himachal Pradesh">Himachal Pradesh</option>
+ <option value="Punjab">Punjab</option>
+ <option value="Chandigarh">Chandigarh</option>
+ <option value="Uttrakhand">Uttrakhand</option>
+ <option value="Haryana">Haryana</option>
+ <option value="Delhi">Delhi</option>
+ <option value="Rajasthan">Rajasthan</option>
+ <option value="Uttar Pradesh">Uttar Pradesh</option>
+ <option value="Bihar">Bihar</option>
+ <option value="Sikkim">Sikkim</option>
+ <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+ <option value="Nagaland">Nagaland</option>
+ <option value="Manipur">Manipur</option>
+ <option value="Mizoram">Mizoram</option>
+ <option value="Tripura">Tripura</option>
+ <option value="Meghalaya">Meghalaya</option>
+ <option value="Assam">Assam</option>
+ <option value="West Bengal">West Bengal</option>
+ <option value="Jharkhand">Jharkhand</option>
+ <option value="Odisha">Odisha</option>
+ <option value="Chhatisgarh">Chhatisgarh</option>
+ <option value="Madhya Pradesh">Madhya Pradesh</option>
+ <option value="Gujarat">Gujarat</option>
+ <option value="Daman &amp; Diu">Daman &amp; Diu</option>
+ <option value="Dadra &amp; Nagar Haveli">Dadra &amp; Nagar
+Haveli</option>
+ <option value="Maharashtra">Maharashtra</option>
+ <option value="Andhra Pradesh">Andhra Pradesh</option>
+ <option value="Karnataka">Karnataka</option>
+ <option value="Goa">Goa</option>
+ <option value="Lakshadweep">Lakshadweep</option>
+ <option value="Kerala">Kerala</option>
+ <option value="Tamil Nadu">Tamil Nadu</option>
+ <option value="Puducherry">Puducherry</option>
+ <option value="Andaman &amp; Nicobar Islands">Andaman &amp;
+Nicobar Islands</option>
+ <option value="Telangana">Telangana</option>
+</select>
+ </div>
+ </div>
+
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Other Info. <span
+style="color:red;">*</span></label>
+ <input type="text" class="form-control" name="otherinfo"
+placeholder="Enter Any Other Information About Child" required>
+ </div>
+ </div>
+
+
+ <div class="form-group">
+ <div class="col-md-6">
+ <label class="control-label" >Upload Photo <span
+style="color:red;">*</span></label>
+ <input type="file" class="form-control" name="photo"
+required="required">
+ </div>
+ </div><br>
+
+ <div class="form-group">
+ <center>
+ <input type="checkbox" required><span style="color:red;">*</span>I accept
+the<a href="Terms&conditions2.jsp">TERMS & CONDITIONS.</a>
+ </center>
+ </div>
+
+ <div class="form-group">
+ <div class="col-md-12">
+ <button type="submit" class="btn btn-primary btn-lg btn-block
+info">Submit</button>
+ </div>
+ </div>
+ </fieldset>
+ </form>
+</div>
+</div>
+<br>
+<div class="bo-wrap clr4">
+ <div class="bo-footer">
+ <div class="bo-footer-social"></div>
+ </div>
+</div>
+<div class="bo-wrap clr3">
+ <div class="bo-footer">
+ <div class="bo-footer-smap">
+ <a href="Welcome.jsp">Home</a> | <a href="Feedback2.jsp">Feedback</a> | <a
+href="Contact2.jsp">Contact Us</a>
+ </div>
+
+ <div class="bo-footer-uonline">
+ <script id="_wautoy">var _wau = _wau || []; _wau.push(["small",
+"p6egqc1t5bze", "toy"]);
+(function() {var s=document.createElement("script"); s.async=true;
+s.src="http://widgets.amung.us/small.js";
+document.getElementsByTagName("head")[0].appendChild(s);
+})();</script>
+ </div>
+
+ <div class="bo-footer-power">
+ Designed & Developed by Ankita Tyagi.
+
+ </div>
+ <div class="clearfix"></div>
+ </div>
+</div>
+<div class="bo-wrap clr4">
+ <div class="bo-footer">
+ <div class="bo-footer-copyright">&copy;2020 Findmissingpeoples.com All rights
+reserved.</div>
+ </div>
+</div>
+</body>
+</html>
